@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/IO/IO.iml" filepath="$PROJECT_DIR$/IO/IO.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Net/Net.iml" filepath="$PROJECT_DIR$/Net/Net.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OO/OO.iml" filepath="$PROJECT_DIR$/OO/OO.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Plane/Plane.iml" filepath="$PROJECT_DIR$/Plane/Plane.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Thread/Thread.iml" filepath="$PROJECT_DIR$/Thread/Thread.iml" />
+      <module fileurl="file://$PROJECT_DIR$/workspece.iml" filepath="$PROJECT_DIR$/workspece.iml" />
+      <module fileurl="file://$PROJECT_DIR$/算法很美/算法很美.iml" filepath="$PROJECT_DIR$/算法很美/算法很美.iml" />
+    </modules>
+  </component>
+</project>

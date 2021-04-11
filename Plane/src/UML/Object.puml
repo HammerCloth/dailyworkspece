@@ -1,0 +1,42 @@
+@startuml
+
+GameObject<|--Plane
+GameObject<|--Bullet
+Aircraft*--Bullet
+Aircraft--|>Plane
+
+
+
+class GameObject{
+    +int speed
+    +Image img
+    +Double x
+    +Double y
+    +int width
+    +int Height
+    +GameObject()
+    +GameObject(String imgPath, double x, double y)
+    +paintMyself(Graphics g):void
+    +getRect():Rectangle
+    +setSpeed(int speed):void
+}
+class Plane{
+    +boolean right
+    +boolean left
+    +boolean up
+    +boolean down
+    +Plane()
+    +Plane(String imgPath, double x, double y)
+    +addDirection(KeyEvent e):void
+    +minusDirection(KeyEvent e):void
+}
+class Bullet{
+    +paintMyself(Graphics g):void
+}
+class Aircraft{
+    +List<Bullet> bulls
+    +shot(Graphics g):void
+    +paintMyself(Graphics g):void
+
+}
+@enduml
