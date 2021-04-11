@@ -9,7 +9,7 @@ import org.junit.Test;
  * @date: 2021/4/9 18:59
  * @version:v1.0
  */
-//test
+//test lalala
 public class Case07_IsRotate {
     public static boolean isRotate(String a, String b) {
         if (a.length() != b.length()) {
