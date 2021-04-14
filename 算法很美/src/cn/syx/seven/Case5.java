@@ -53,9 +53,9 @@ public class Case5 {
         return str.substring(0,1)+a+str.substring(1,str.length());
     }
 
-    //todo 全排列的递归版
+    //全排列的递归版
     private static List<String> f(char[] chars,int n){
-        //todo 程序出口，n=0时
+        //程序出口，n=0时
         if (n==0){
             List<String> newlist = new ArrayList<>();
             String str = ""+chars[0];
