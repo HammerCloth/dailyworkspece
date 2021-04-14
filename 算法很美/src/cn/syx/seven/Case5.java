@@ -14,7 +14,7 @@ public class Case5 {
     public static void main(String[] args) {
         String str = "abc";
         System.out.println(insert('e',str,1));
-        System.out.println(pl("abc").toString());
+        System.out.println(f("abc".toCharArray(),2).toString());
 
     }
     private static List<String> pl(String str) {
@@ -54,4 +54,21 @@ public class Case5 {
     }
 
     //todo 全排列的递归版
+    private static List<String> f(char[] chars,int n){
+        //todo 程序出口，n=0时
+        if (n==0){
+            List<String> newlist = new ArrayList<>();
+            String str = ""+chars[0];
+            newlist.add(str);
+            return newlist;
+        }
+        List<String> oldlist = f(chars,n-1);
+        List<String> newlist = new ArrayList<>();
+        for (String str:oldlist){
+            for(int i=0;i<=str.length();i++){
+                newlist.add(insert(chars[n],str,i));
+            }
+        }
+        return newlist;
+    }
 }
