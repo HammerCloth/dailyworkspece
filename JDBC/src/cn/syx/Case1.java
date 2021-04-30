@@ -22,7 +22,7 @@ public class Case1 {
         String url = "jdbc:mysql://localhost:3306/day04_test01_bookstore";
         Connection con = login(url);
         try {
-            addUser(con, "kkk", "1234", "42419936@qq.com");
+            showTable(con,"users");
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
@@ -92,12 +92,41 @@ public class Case1 {
         con.close();
     }
 
-    private void showTable(Connection con, String tableName) throws SQLException {
-        String sql = "select * from ?";
-        PreparedStatement ps = con.prepareStatement(sql);
-        ps.setString(1, tableName);
+    private static void showTable(Connection con, String tableName) throws SQLException {
+        String sql = "select * from ";
+        PreparedStatement ps = con.prepareStatement(sql+tableName);
         ResultSet rs = ps.executeQuery();
-
+        ResultSetMetaData rsmd = rs.getMetaData();
+        System.out.println("×Ö¶ÎÊýÁ¿"+rsmd.getColumnCount());
+        for (int i=1;i<=rsmd.getColumnCount();i++){
+            System.out.print(rsmd.getColumnName(i)+"\t");
+            //System.out.println(rsmd.getColumnTypeName(i));
+        }
+        System.out.println();
+        for (int i=1;i<=rsmd.getColumnCount();i++){
+            //System.out.print(rsmd.getColumnName(i)+"\t");
+            System.out.print(rsmd.getColumnTypeName(i)+"\t");
+        }
+        System.out.println();
+        while(rs.next()){
+            for (int i=1;i<=rsmd.getColumnCount();i++){
+               print(rsmd.getColumnTypeName(i),rs,i);
+            }
+            System.out.println();
+        }
+    }
+    private static void print(String model,ResultSet rs,int number) throws SQLException {
+        switch(model){
+            case "INT":
+                System.out.print(rs.getString(number)+"\t");
+                break;
+            case "VARCHAR":
+                System.out.print(rs.getString(number)+"\t");
+                break;
+            case "DOUBLE":
+                System.out.print(rs.getDouble(number)+"\t");
+                break;
+        }
     }
 }
 
